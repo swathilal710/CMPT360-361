@@ -1,0 +1,8 @@
+# CMPT360 A2 - Workload Demo
+# Format: PID ARRIVAL CPU_TIME
+0 0 3
+3 2 2
+2 0 1
+1 9 1
+4 0 1
+5 12 1
