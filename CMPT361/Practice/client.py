@@ -16,15 +16,19 @@ def client():
     try:
         #Client connect with the server
         clientSocket.connect((serverName,serverPort))
+        #receive the welcome message
         message = clientSocket.recv(2048)
         num = input(message.decode('ascii'))
         
         #Client send message to the server
-        sent_size = clientSocket.send(num.encode("ascii"))
+        clientSocket.send(num.encode("ascii"))
         
         # Client receives a message from the server and print it
         message = clientSocket.recv(2048)
         print(message.decode('ascii'))
+
+        messageHello = clientSocket.recv(2048).decode('ascii')
+        print(messageHello)
         
         # Client terminate connection with the server
         clientSocket.close()

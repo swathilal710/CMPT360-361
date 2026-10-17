@@ -24,6 +24,7 @@ def server():
         sys.exit(1)        
         
     print('The server is ready to accept connections')
+    
         
     #The server can only have one connection in its queue waiting for acceptance
     serverSocket.listen(1)
@@ -41,6 +42,8 @@ def server():
             #Server sends the client the modified message
             #print(modifiedMessage)
             connectionSocket.send(modifiedMessage.encode('ascii'))
+            connectionSocket.sendall("bHello")
+            connectionSocket.sendall("bWorld!")
             
             #Server terminates client connection
             connectionSocket.close()
